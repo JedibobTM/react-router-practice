@@ -6,6 +6,9 @@ function StudentForm() {
     
     const [student, setStudent] = useState('');
 
+    const navigateToList = () => {
+        history.push('/allStudents');
+    }
 
     // Called when the submit button is pressed
     const addStudent = (newStudent) => {
@@ -16,6 +19,7 @@ function StudentForm() {
             data: {github_name: newStudent}
         }).then((response) => {
             console.log(response);
+            navigateToList();
         }).catch((err) => {
             console.log(err);
         });
